@@ -14,7 +14,10 @@ ARGS = parser.parse_args()
 def convert_to_other_ebook_format(input_ebook, output_format, option):
     # book.epub to [converted]book.pdf for example
     output_ebook = '[converted]' + input_ebook.split('.epub')[0] + '.' + output_format.replace('.', '')
-    process = subprocess.Popen(['ebook-convert', input_ebook, output_ebook] + option)
+    if option is not None:
+        process = subprocess.Popen(['ebook-convert', input_ebook, output_ebook] + option)
+    else:
+        process = subprocess.Popen(['ebook-convert', input_ebook, output_ebook]) 
     process.wait()
 
 if __name__ == '__main__':
