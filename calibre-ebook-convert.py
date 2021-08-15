@@ -20,7 +20,8 @@ def convert_to_other_ebook_format(input_ebook, output_format, option):
 if __name__ == '__main__':
     epub_books = [epub for epub in os.listdir(path) if epub.endswith('.epub')]
     
-    ARGS.OPTION = func(ARGS.OPTION)
+    if ARGS.OPTION:
+        ARGS.OPTION = func(ARGS.OPTION)
     
     # Automatically set output profile to tablet
     ARGS.OPTION.append('output-profile')
