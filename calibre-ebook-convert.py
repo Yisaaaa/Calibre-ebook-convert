@@ -8,7 +8,7 @@ func = lambda li: ['--'+x for x in li]
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('-c,', '--convert', dest='CONVERT_TYPE', help='filetype to convert to')
-parser.add_argument('-op', '--option', nargs='+',dest='OPTION',help='option output')
+parser.add_argument('-op', '--option', nargs='+',dest='OPTION',help='calibre convert option')
 ARGS = parser.parse_args()
 
 def convert_to_other_ebook_format(input_ebook, output_format, option):
