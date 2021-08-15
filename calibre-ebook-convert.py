@@ -2,7 +2,7 @@ import subprocess
 import os
 import argparse
 
-# Rename to your own path
+# Rename it to where youre epubs are located
 path = '/sdcard/Download/'
 func = lambda li: ['--'+x for x in li]
 
